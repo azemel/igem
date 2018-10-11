@@ -1,10 +1,21 @@
 {
   "name": "my-littel-framework",
   "version": "1.0.0",
-  "description": "",
   "license": "ISC",
   "devDependencies": {
-	  "gulp": "github:gulpjs/gulp#4.0",
-	  "del": "^3.0.0"
-  }
+    "del": "^3.0.0",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-sass": "^4.0.1",
+    "path": "^0.12.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azemel/igem.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/azemel/igem/issues"
+  },
+  "homepage": "https://github.com/azemel/igem#readme",
+  "description": ""
 }
