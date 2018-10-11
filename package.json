@@ -1,0 +1,10 @@
+{
+  "name": "my-littel-framework",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "devDependencies": {
+	  "gulp": "github:gulpjs/gulp#4.0",
+	  "del": "^3.0.0"
+  }
+}
