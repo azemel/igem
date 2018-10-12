@@ -1,0 +1,91 @@
+.header
+    @extend %clearfix
+    @extend %tmp
+    display: block
+    width: 100%
+    position: relative
+    
+    .logo 
+        display: block
+        position: absolute
+        transform: translate(-50%, 0)
+        left: 50%
+        text-decoration: none
+        border-radius: 100%
+        background-color: white
+        border: 1px solid black
+        padding: 10px 10px 15px
+        
+        img             
+            height: 70px
+            width: 75px    
+
+    .menu 
+        @extend %nl
+
+        li 
+            cursor: default
+            white-space: nowrap
+
+        > li 
+            position: relative
+
+        .submenu 
+            @extend %nl
+            @extend %tmp
+            display: none
+
+            li 
+                padding: 8px 20px
+
+        > li:hover 
+            @extend %tmp
+            background-color: $color-hover
+            
+            .submenu 
+                display: block
+
+
+
+    &.sticky 
+        position: fixed
+        top: 0
+        z-index: 1
+        width: 100%
+
+.header-bottom 
+    height: 49px
+
+@media (min-width: $width-tablet + 1)
+    .header
+        .menu
+            > li
+                float: left
+                padding: 16px 20px
+            
+            .submenu
+                position: absolute
+                top: 52px
+
+        .menu-left 
+            float: left
+
+            .submenu 
+                left: 0
+
+        .menu-right
+            float: right
+
+            .submenu 
+                right: 0
+
+
+@media (max-width: $width-tablet) 
+    .header
+        .menu
+            display: none
+
+        .navigation.shown 
+            .menu
+                display: block
+        

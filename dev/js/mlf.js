@@ -127,6 +127,14 @@
 		hide: function() {
 			this.element.style.display = "none";
 			this.trigger( { type: "hidden" } );
+		},
+
+		toogle: function() {
+			if (this.element.style.display === "none") {
+				this.show();
+			} else {
+				this.hide();
+			}
 		}
 
  

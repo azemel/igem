@@ -1,0 +1,71 @@
+$width-tablet: 768px
+
+html, body 
+    font-family: 'Roboto'
+    margin: 0
+    padding: 0
+    height: 2000px
+
+header, footer, nav 
+    display: block
+
+a 
+    cursor: pointer
+
+%clearfix::after 
+    content: ''
+    display: table
+    clear: both
+
+%nl
+    list-style-type: none
+    padding: 0
+    margin: 0
+
+%nl-inline
+    @extend %nl
+    @extend %clearfix
+    > li
+        float: left
+
+.content 
+    margin: 0 auto
+
+.narrow .content 
+    width: 800px
+
+.cols 
+    @extend %nl-inline
+    margin: 0 -2%
+
+
+    &.inset 
+        margin: 0 2%
+    
+
+    .col 
+        float: left
+        margin: 0 2%
+        img 
+            max-width: 100%
+    
+
+    .col.half 
+        width: 46%
+    
+
+    .col.third 
+        width: 29.3%
+    
+
+    .col.two-thirds 
+        width: 62.6%
+    
+
+    .col.quarter 
+        width: 21%
+    
+
+    .col.five-twelfth 
+        width: 37.6%
+    
