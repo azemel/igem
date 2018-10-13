@@ -273,7 +273,6 @@
 			var childNode = element.firstChild;
 			
 			while (childNode !== null) {
-				console.log(childNode);
 				var child = this._initComponent( childNode, component);
 				
 				if ( child === false ) {
@@ -288,7 +287,7 @@
 
 		_detectType: function( element ) {
 
-			if (element.nodeType === 3) {
+			if (element.nodeType !== 1) {
 				return false;
 			}
 
@@ -313,7 +312,6 @@
 
 	window.addEventListener( "load", function() {
 		this.mlf._init( this );
-		this.console.log( window.mlf );
 	} );
 
 

@@ -2,8 +2,10 @@
     @extend %clearfix
     @extend %tmp
     display: block
+    height: 60px
     width: 100%
     position: relative
+    z-index: 200
     
     .logo 
         display: block
@@ -26,26 +28,57 @@
         li 
             cursor: default
             white-space: nowrap
+            
+            &:hover 
+                @extend %tmp
+                background-color: $color-hover
 
         > li 
             position: relative
 
         .submenu 
             @extend %nl
-            @extend %tmp
             display: none
 
-            li 
-                padding: 8px 20px
-
-        > li:hover 
-            @extend %tmp
-            background-color: $color-hover
-            
-            .submenu 
+            a
                 display: block
 
-
+    .nav-button 
+        display: none
+        height: 60px
+        left: 0
+        padding: 10px
+        position: absolute
+        top: 0
+        width: 60px
+    
+        i 
+            background-color: $color-main
+            height: 2px
+            left: 50%
+            margin-left: -15px
+            margin-top: -1px
+            position: absolute
+            top: 50%
+            transition: background-color 0.3s 0s
+            width: 30px
+        
+            &::before, &::after 
+                background-color: $color-main
+                backface-visibility: hidden
+                content: ''
+                height: 100%
+                position: absolute
+                transform: translateZ(0)
+                transition: transform 0.3s 0s
+                width: 100%
+            
+            &::before 
+                transform: translateY(-8px)
+            
+            &::after 
+                transform: translateY(8px)
+                
 
     &.sticky 
         position: fixed
@@ -61,11 +94,23 @@
         .menu
             > li
                 float: left
-                padding: 16px 20px
+                height: $header-height
+
+                > span    
+                    line-height: $header-height
+                    padding: 0px 20px
             
-            .submenu
-                position: absolute
-                top: 52px
+                .submenu
+                    position: absolute
+                    top: $header-height + 1
+                    background-color: white
+                    outline: 1px solid black              
+                    a
+                        padding: 8px 20px
+
+                &:hover .submenu 
+                    display: block
+
 
         .menu-left 
             float: left
@@ -78,14 +123,87 @@
 
             .submenu 
                 right: 0
+                    
 
 
 @media (max-width: $width-tablet) 
     .header
-        .menu
-            display: none
+        .nav-button 
+            display: block
+        
+        .navigation 
+            background-color: $color-bg-dark
+            max-height: 100%
+            min-width: 280px
+            color: $color-fg-light
+            opacity: 0
+            overflow: auto
+            bottom: 0px
+            top: 60px
+            left: 0
+            transform: translateX(-100%)
+            transition: transform 0.3s 0s, opacity 0.3s 0s
+            position: fixed
+            width: auto
+            z-index: 10
+            padding-top: 10px
+        
 
-        .navigation.shown 
-            .menu
-                display: block
+        .menu 
+            > li > span 
+                padding: 0 20px
+                line-height: 40px
+
+            .submenu 
+                background-color: hsla(0,0%,100%, 0.2)
+
+                a 
+                    padding: 0 30px
+                    line-height: 40px
+
+            .menu-item-branch
+                .label::before 
+                    content: '+'
+                    padding-right: 10px
+
+                &.open     
+                    .label::before 
+                        content: '-'
+
+                    .submenu 
+                        display: block
+                    
+
+
+
+
+    .nav-shown 
+        overflow: hidden
+    
+        &::before 
+            background-color: hsla(0, 0%, 0%, 0.5)
+            bottom: 0px
+            content: ''
+            display: block
+            left: 0px
+            position: fixed
+            right: 0px
+            top: 0px
+            z-index: 1
+        
+
+        .navigation 
+            opacity: 1
+            transform: translateX(0)
+        
+        .nav-button i 
+            background-color: transparent
+        
+        .nav-button i::before 
+            transform: translateY(0) rotate(-45deg)
+        
+        .nav-button i::after 
+            transform: translateY(0) rotate(45deg)
+        
+
         

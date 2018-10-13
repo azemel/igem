@@ -2,7 +2,6 @@ mlf.defineComponent("Header", {
 	className: "header",
 
 	_initHeader: function() {
-		console.log(this);
 		this._header = {};
 		if ( 'stick' in this._options ) {
 			this._header.height = this.element.offsetHeight;
