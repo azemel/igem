@@ -62,11 +62,9 @@ a {
 
 html, body {
   font-family: 'Roboto';
-  font-size: 16px; }
-
-.header, .header .menu li:hover {
-  background-color: white;
-  outline: 1px solid black; }
+  font-size: 16px;
+  background-color: #0b0b0b;
+  min-height: 100%; }
 
 h2 {
   text-align: center;
@@ -87,8 +85,10 @@ a.reference {
   text-align: center; }
 
 .header {
+  background-color: #0b0b0b;
   display: block;
   height: 60px;
+  color: white;
   width: 100%;
   position: relative;
   z-index: 200; }
@@ -99,8 +99,7 @@ a.reference {
     left: 50%;
     text-decoration: none;
     border-radius: 100%;
-    background-color: white;
-    border: 1px solid black;
+    background-color: #0b0b0b;
     padding: 10px 10px 15px; }
     .header .logo img {
       height: 70px;
@@ -125,7 +124,7 @@ a.reference {
     top: 0;
     width: 60px; }
     .header .nav-button i {
-      background-color: black;
+      background-color: white;
       height: 2px;
       left: 50%;
       margin-left: -15px;
@@ -135,7 +134,7 @@ a.reference {
       transition: background-color 0.3s 0s;
       width: 30px; }
       .header .nav-button i::before, .header .nav-button i::after {
-        background-color: black;
+        background-color: white;
         backface-visibility: hidden;
         content: '';
         height: 100%;
@@ -161,14 +160,15 @@ a.reference {
     float: left;
     height: 60px; }
     .header .menu > li > span {
+      color: white;
       line-height: 60px;
       padding: 0px 20px; }
     .header .menu > li .submenu {
       position: absolute;
       top: 61px;
-      background-color: white;
-      outline: 1px solid black; }
+      background-color: #0b0b0b; }
       .header .menu > li .submenu a {
+        color: white;
         padding: 8px 20px; }
     .header .menu > li:hover .submenu {
       display: block; }
@@ -236,3 +236,98 @@ a.reference {
       transform: translateY(0) rotate(-45deg); }
     .nav-shown .nav-button i::after {
       transform: translateY(0) rotate(45deg); } }
+
+.scene {
+  position: relative;
+  width: 100%;
+  overflow: hidden; }
+
+.layer {
+  display: none;
+  height: 100%;
+  position: absolute;
+  width: 100%; }
+
+.layer-paralax {
+  transform: translate3d(0px, 0px, 0px); }
+
+.layer-split-paralax .split-left {
+  position: absolute;
+  left: 0;
+  right: 50%;
+  height: 100%;
+  background-position-x: 0%;
+  overflow: hidden; }
+
+.layer-split-paralax .split-right {
+  position: absolute;
+  left: 50%;
+  right: 0;
+  height: 100%;
+  filter: grayscale(100%);
+  overflow: hidden; }
+
+#reef {
+  height: 800px;
+  background-color: #1b7789; }
+
+#reef-fish {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0; }
+
+#reef-bg {
+  width: 100%;
+  bottom: 0px;
+  opacity: 0.5; }
+
+#reef-bg .split-right,
+#reef-bg .split-left {
+  background-image: url(layer-bg.png);
+  background-repeat: no-repeat;
+  background-origin: border-box; }
+
+#reef-corals-first {
+  width: 100%;
+  bottom: 0px; }
+
+#reef-corals-first .split-right,
+#reef-corals-first .split-left {
+  background-image: url(layer-first.png);
+  background-position-y: bottom;
+  background-origin: border-box;
+  background-repeat: no-repeat; }
+
+#reef-corals-second {
+  width: 100%;
+  bottom: 0px; }
+
+#reef-corals-second .split-left,
+#reef-corals-second .split-right {
+  background-image: url(layer-second.png);
+  background-position-y: bottom;
+  background-origin: border-box;
+  background-repeat: no-repeat; }
+
+#reef-corals-third {
+  width: 100%;
+  bottom: 0px; }
+
+#reef-corals-third .split-left,
+#reef-corals-third .split-right {
+  background-image: url(layer-third.png);
+  background-position-y: bottom;
+  background-origin: border-box;
+  background-repeat: no-repeat; }
+
+#reef-corals-zero {
+  width: 100%;
+  bottom: 0px; }
+
+#reef-corals-zero .split-left,
+#reef-corals-zero .split-right {
+  background-image: url(layer-zero.png);
+  background-position-y: bottom;
+  background-origin: border-box;
+  background-repeat: no-repeat; }

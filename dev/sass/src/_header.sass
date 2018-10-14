@@ -1,8 +1,9 @@
 .header
     @extend %clearfix
-    @extend %tmp
+    background-color: $color-bg-main
     display: block
     height: 60px
+    color: $color-fg-main
     width: 100%
     position: relative
     z-index: 200
@@ -14,8 +15,7 @@
         left: 50%
         text-decoration: none
         border-radius: 100%
-        background-color: white
-        border: 1px solid black
+        background-color: $color-bg-main
         padding: 10px 10px 15px
         
         img             
@@ -29,8 +29,7 @@
             cursor: default
             white-space: nowrap
             
-            &:hover 
-                @extend %tmp
+            &:hover  
                 background-color: $color-hover
 
         > li 
@@ -53,7 +52,7 @@
         width: 60px
     
         i 
-            background-color: $color-main
+            background-color: $color-fg-main
             height: 2px
             left: 50%
             margin-left: -15px
@@ -64,7 +63,7 @@
             width: 30px
         
             &::before, &::after 
-                background-color: $color-main
+                background-color: $color-fg-main
                 backface-visibility: hidden
                 content: ''
                 height: 100%
@@ -97,15 +96,16 @@
                 height: $header-height
 
                 > span    
+                    color: $color-fg-main
                     line-height: $header-height
                     padding: 0px 20px
             
                 .submenu
                     position: absolute
                     top: $header-height + 1
-                    background-color: white
-                    outline: 1px solid black              
+                    background-color: $color-bg-main
                     a
+                        color: $color-fg-main
                         padding: 8px 20px
 
                 &:hover .submenu 

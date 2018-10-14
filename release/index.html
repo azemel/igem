@@ -4,45 +4,50 @@
 		<link rel="stylesheet" href="main.css">
 	</head>
 	<body>
-		<header class="header" data-stick="600">
+		<header class="header narrow" data-stick="auto">
 			<div class="content">
-				<div class="logo">TUIT</div>
-				<ul class="menu">
-					<li class="menu-item">
-						<span>People</span>
-						<ul class="submenu">
-							<li class="menu-item">Team</li>
-							<li class="menu-item">Attributions</li>
-							<li class="menu-item">Sponsoring</li>
-						</ul>
-					</li>
-					<li class="menu-item">
-						<span>Project</span>
-						<ul class="submenu">
-							<li class="menu-item">Description</li>
-							<li class="menu-item">Results</li>
-							<li class="menu-item">Design</li>
-							<li class="menu-item">Modeling</li>
-						</ul>
-					</li>
-					<li class="menu-item">
-						<span>Lab</span>
-						<ul class="submenu">
-							<li class="menu-item">InterLab</li>
-							<li class="menu-item">Experiments</li>
-							<li class="menu-item">Notebook</li>
-							<li class="menu-item">Safety</li>
-						</ul>
-					</li>
-					<li class="menu-item">
-						<span>Human Practices</span>
-						<ul class="submenu">
-							<li class="menu-item">Human Practices</li>
-							<li class="menu-item">Public Egagement</li>
-							<li class="menu-item">Collaborations</li>
-						</ul>
-					</li>
-				</ul>
+				<a class="logo"><img src="logo.svg"></a>
+				<nav class="navigation" data-breakpoint="768">
+					<ul class="menu menu-left">
+						<li class="menu-item-branch">
+							<span class="label">Project</span>
+							<ul class="submenu">
+								<li><a>Description</a></li>
+								<li><a>Results</a></li>
+								<li><a>Design</a></li>
+								<li><a>Modeling</a></li>
+							</ul>
+						</li>
+						<li class="menu-item-branch">
+							<span class="label">Lab</span>
+							<ul class="submenu">
+								<li><a>InterLab</a></li>
+								<li><a>Experiments</a></li>
+								<li><a>Notebook</a></li>
+								<li><a>Safety</a></li>
+							</ul>
+						</li>
+					</ul>
+					
+					<ul class="menu menu-right">
+						<li class="menu-item-branch">
+							<span class="label">People</span>
+							<ul class="submenu">
+								<li><a>Team</a></li>
+								<li><a>Attributions</a></li>
+								<li><a>Sponsoring</a></li>
+							</ul>
+						</li>
+						<li class="menu-item-branch">
+							<span class="label">Human Practices</span>
+							<ul class="submenu">
+								<li><a>Human Practices</a></li>
+								<li><a>Public Egagement</a></li>
+								<li><a>Collaborations</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
 			</div>
 		</header>
 		<div class="scene-paralax scene" id="reef">
@@ -53,6 +58,13 @@
 				<div class="split-right"></div>
 			</div>
 			
+			<div class="layer-paralax layer layer-split-paralax" id="reef-corals-third" 
+				data-layer-z="10"
+				data-animate-shown="slide-in-up 0.2 1">
+				<div class="split-left"></div>
+				<div class="split-right"></div>
+			</div>
+
 			<div class="layer-paralax layer layer-split-paralax" id="reef-corals-second" 
 				data-layer-z="20"
 				data-animate-shown="slide-in-up 0.2 1">
@@ -60,7 +72,7 @@
 				<div class="split-right"></div>
 			</div>
 
-			<div class="layer-paralax layer layer-split-paralax" id="reef-fish" 
+			<!-- <div class="layer-paralax layer layer-split-paralax" id="reef-fish" 
 				data-layer-z="15">
 
 				<div class="split-left">
@@ -81,22 +93,29 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 
 			<div class="layer-paralax layer layer-split-paralax" id="reef-corals-first" 
-				data-layer-z="10"
+				data-layer-z="30"
 				data-animate-shown="slide-in-up 0.4 1">
 				<div class="split-left">
 				</div>
 				<div class="split-right"></div>
 			</div>
 
-			<div class="layer" id="reef-text"
+			<!-- <div class="layer" id="reef-text"
 				data-layer-z="0">
 				<h1>The end is near</h1>
 				<div>Every day we stray further from god, using environment-hostile sunscreen. It bleaches corals and change gender of fish.</div>
-			</div>
+			</div> -->
 
+			<div class="layer-paralax layer layer-split-paralax" id="reef-corals-zero" 
+				data-layer-z="0"
+				data-animate-shown="slide-in-up 0.4 1">
+				<div class="split-left">
+				</div>
+				<div class="split-right"></div>
+			</div>
 		</div>
 		
 

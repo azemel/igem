@@ -83,7 +83,7 @@ mlf.defineComponent( "ParalaxLayer", "Layer", {
 
 	redraw: function() {
 		var x = 0;
-		if ( this._options.layer.z !== 'infinity' ) {
+		if ( this._options.layer.z !== 'infinity' && this._options.layer.z != 0 ) {
 			var x = Math.ceil(this.parent.paralax.shift.x / this._options.layer.z);
 		}
 		//var y = viewShift.y / this._options.layer.z;
