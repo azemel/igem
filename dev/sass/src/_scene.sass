@@ -34,7 +34,6 @@
 
 
 #reef 
-    height: 800px
     background-color: #1b7789 
 
 
@@ -57,7 +56,6 @@
 #reef-bg .split-left 
     background-image: url(layer-bg.png)
     background-repeat: no-repeat
-    // background-size: 1920px 100%
     background-origin: border-box
 
 
@@ -71,7 +69,6 @@
 #reef-corals-first .split-right,
 #reef-corals-first .split-left 
     background-image: url(layer-first.png)
-    // background-size: 100% 800px
     background-position-y: bottom
     background-origin: border-box
     background-repeat: no-repeat
@@ -86,7 +83,6 @@
 #reef-corals-second .split-left, 
 #reef-corals-second .split-right 
     background-image: url(layer-second.png)
-    // background-size: 100% 800px
     background-position-y: bottom
     background-origin: border-box
     background-repeat: no-repeat
@@ -100,7 +96,6 @@
 #reef-corals-third .split-left, 
 #reef-corals-third .split-right 
     background-image: url(layer-third.png)
-    // backgroundk-size: 100% 800px
     background-position-y: bottom
     background-origin: border-box
     background-repeat: no-repeat
@@ -114,7 +109,26 @@
 #reef-corals-zero .split-left, 
 #reef-corals-zero .split-right 
     background-image: url(layer-zero.png)
-    // backgroundk-size: 100% 800px
+    background-size: auto 800px
     background-position-y: bottom
     background-origin: border-box
     background-repeat: no-repeat
+
+#reef-corals-zero
+    .split-right 
+        filter: none
+        background-image: url(layer-zero-after.png)
+
+
+#reef-section
+    position: relative
+
+#reef-card 
+    @extend %box-glow-red
+    font-size: 20px
+    font-weight: 300
+    position: absolute
+    width: 30%
+    bottom: 0%
+    left: 5%
+    padding: 40px

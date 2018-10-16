@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "license": "ISC",
   "devDependencies": {
+    "concat": "^1.0.3",
     "del": "^3.0.0",
-    "path": "^0.12.7",
     "gulp": "github:gulpjs/gulp#4.0",
-    "gulp-sass": "^4.0.1"
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.0.1",
+    "path": "^0.12.7"
   },
   "repository": {
     "type": "git",

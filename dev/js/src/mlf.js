@@ -282,7 +282,7 @@
 					this._initChildren( child, childNode );
 				}
 				childNode = childNode.nextSibling;
-			}
+            }
 		},
 
 		_detectType: function( element ) {
@@ -311,7 +311,8 @@
 	window.mlf = new mlf();
 
 	window.addEventListener( "load", function() {
-		this.mlf._init( this );
+        this.mlf._init( this );
+        
 	} );
 
 

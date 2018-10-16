@@ -4,8 +4,14 @@ mlf.defineComponent("Header", {
 	_initHeader: function() {
 		this._header = {};
 		if ( 'stick' in this._options ) {
-			this._header.height = this.element.offsetHeight;
-			this._header.scrollTop = this._options.stick === 'auto' ? this._header.height : parseInt( this._options.stick );
+            this._header.height = this.element.offsetHeight;
+            if ( this._options.stick === 'auto' ) {
+                this._header.scrollTop = this._header.height;
+            } else if ( this._options.stick[0] === "#" ) {
+                this._header.scrollTop = document.getElementById( this._options.stick.substr( 1 ) ); 
+            } else {
+                this._header.scrollTop = parseInt( this._options.stick );
+            }
 			
 			var placeholder = document.createElement("div");
 			placeholder.className = "header-placeholder";
@@ -18,8 +24,11 @@ mlf.defineComponent("Header", {
 		}
 	},
 
-	_scrollHandler: function( e ) {
-		if ( document.body.scrollTop > this._header.scrollTop ) {
+    _scrollHandler: function( e ) {
+        
+        var t = isNaN( this._header.scrollTop ) ? this._header.scrollTop.offsetHeight : this._header.scrollTop; 
+
+		if ( document.body.scrollTop > t ) {
 			this.element.classList.add( "sticky" );	
 			this._header.placeholder.style.display = "block";
 		} else {

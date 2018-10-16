@@ -2,14 +2,14 @@
 
 
 $color-hover: hsla(0, 0%, 0%, 0.2)
-$color-bg-main: #0b0b0b
-$color-fg-main: white
+$color-bg-main: #181e33
+$color-fg-main: #dde5ee
 $color-bg-dark: black
 $color-fg-light: white
 
-$header-height: 60px
+$header-height: 80px
 
-
+$color-highlight: #50b1be
 
 html, body 
     font-family: 'Roboto'
@@ -42,3 +42,15 @@ a.reference
         padding: 3px 0
         font-size: 14px
         text-align: center
+
+%box-glow 
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px $color-highlight, 0 0 20px $color-highlight, 0 0 35px $color-highlight, 0 0 40px $color-highlight, 0 0 50px $color-highlight, 0 0 75px $color-highlight
+
+$color-highlight-red: #ea2d30
+%box-glow-red
+    box-shadow: 0 0 10px rgba(255,255,255,0.7), 0 0 10px $color-highlight-red, 0 0 15px $color-highlight-red, 0 0 20px $color-highlight-red, 0 0 50px opacify($color-highlight-red, 0.4)
+
+
+.card 
+    background-color: $color-bg-main
+    color: $color-fg-main

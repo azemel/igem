@@ -2,25 +2,25 @@
     @extend %clearfix
     background-color: $color-bg-main
     display: block
-    height: 60px
+    height: $header-height
     color: $color-fg-main
     width: 100%
     position: relative
     z-index: 200
     
     .logo 
+        background-color: $color-bg-main
         display: block
         position: absolute
         transform: translate(-50%, 0)
         left: 50%
         text-decoration: none
-        border-radius: 100%
-        background-color: $color-bg-main
-        padding: 10px 10px 15px
-        
+        padding: 5px
+        height: $header-height
+
         img             
-            height: 70px
-            width: 75px    
+            height: 100%
+            width: auto    
 
     .menu 
         @extend %nl
@@ -82,15 +82,26 @@
     &.sticky 
         position: fixed
         top: 0
-        z-index: 1
+        z-index: 500
         width: 100%
+        background-color: $color-bg-main
+        // box-shadow: 0px -30px 30px -30px hsla(187, 46%, 53%, 0.5) inset, 0px -3px 3px -3px hsla(187, 50%, 100%, 0.5) inset;
+        box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px $color-highlight, 0 0 20px $color-highlight, 0 0 35px $color-highlight, 0 0 40px $color-highlight, 0 0 50px $color-highlight, 0 0 75px $color-highlight
+        
+
 
 .header-bottom 
     height: 49px
 
 @media (min-width: $width-tablet + 1)
     .header
+        .navigation
+            width: 768px
+            margin: 0 auto
+            font-size: 20px
+            font-weight: 300
         .menu
+            width: 40%
             > li
                 float: left
                 height: $header-height
@@ -102,24 +113,33 @@
             
                 .submenu
                     position: absolute
-                    top: $header-height + 1
+                    top: $header-height
                     background-color: $color-bg-main
                     a
                         color: $color-fg-main
                         padding: 8px 20px
+                        margin: 1px 0px 0px 0px;
 
-                &:hover .submenu 
-                    display: block
+                        &:hover 
+                            background-color: hsla(187, 46%, 53%, 0.1)
+                            box-shadow: 30px 0px 30px -30px hsla(187, 46%, 53%, 0.5) inset, 3px 0px 3px -3px hsla(187, 50%, 100%, 0.5) inset, -30px 0px 30px -30px hsla(187, 46%, 53%, 0.5) inset, -3px 0px 3px -3px hsla(187, 50%, 100%, 0.5) inset,;
+                    
+                &:hover 
+                    background-color:  hsla(187, 46%, 53%, 0.1), black
+                    box-shadow: 30px 0px 30px -30px hsla(187, 46%, 53%, 0.5) inset, 3px 0px 3px -3px hsla(187, 50%, 100%, 0.5) inset, -30px 0px 30px -30px hsla(187, 46%, 53%, 0.5) inset, -3px 0px 3px -3px hsla(187, 50%, 100%, 0.5) inset,;
+                    .submenu 
+                        display: block
 
 
         .menu-left 
             float: left
-
             .submenu 
                 left: 0
 
         .menu-right
             float: right
+            > li
+                float: right
 
             .submenu 
                 right: 0
@@ -206,4 +226,12 @@
             transform: translateY(0) rotate(45deg)
         
 
+.banner 
+    .title
+        padding: 30px
+        font-size: 100px
+        font-weight: 100
+        color: $color-fg-main
+        text-align: center  
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px $color-highlight, 0 0 35px $color-highlight, 0 0 40px $color-highlight, 0 0 50px $color-highlight, 0 0 75px $color-highlight
         

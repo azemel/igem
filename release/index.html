@@ -1,30 +1,30 @@
 <html>
 	<head>
-		<meta charset="utf8">
+        <meta charset="utf8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="main.css">
 	</head>
 	<body>
-		<header class="header narrow" data-stick="auto">
-			<div class="content">
-				<a class="logo"><img src="logo.svg"></a>
-				<nav class="navigation" data-breakpoint="768">
+		<header class="header" data-stick="#reef">
+				<a class="logo" href="index.html"><img src="logo.svg"></a>
+                <nav class="navigation" data-breakpoint="768">
 					<ul class="menu menu-left">
 						<li class="menu-item-branch">
 							<span class="label">Project</span>
 							<ul class="submenu">
-								<li><a>Description</a></li>
-								<li><a>Results</a></li>
-								<li><a>Design</a></li>
-								<li><a>Modeling</a></li>
+								<li><a href="description.html">Description</a></li>
+								<li><a href="results.html">Results</a></li>
+								<li><a href="Design.html">Design</a></li>
+								<li><a href="Modeling.html">Modeling</a></li>
 							</ul>
 						</li>
 						<li class="menu-item-branch">
 							<span class="label">Lab</span>
 							<ul class="submenu">
-								<li><a>InterLab</a></li>
-								<li><a>Experiments</a></li>
-								<li><a>Notebook</a></li>
-								<li><a>Safety</a></li>
+								<li href="interlab.html"><a>InterLab</a></li>
+								<li href="experiments.html"><a>Experiments</a></li>
+								<li href="notebook.html"><a>Notebook</a></li>
+								<li href="safety.html"><a>Safety</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -33,100 +33,113 @@
 						<li class="menu-item-branch">
 							<span class="label">People</span>
 							<ul class="submenu">
-								<li><a>Team</a></li>
-								<li><a>Attributions</a></li>
-								<li><a>Sponsoring</a></li>
+								<li><a href="team.html">Team</a></li>
+								<li><a href="attributions.html">Attributions</a></li>
+								<li><a href="sponsoring.html">Sponsoring</a></li>
 							</ul>
 						</li>
 						<li class="menu-item-branch">
 							<span class="label">Human Practices</span>
 							<ul class="submenu">
-								<li><a>Human Practices</a></li>
-								<li><a>Public Egagement</a></li>
-								<li><a>Collaborations</a></li>
+								<li><a href="human-practices.html">Human Practices</a></li>
+								<li><a href="public-engagement.html">Public Engagement</a></li>
+								<li><a href="collaborations.html">Collaborations</a></li>
 							</ul>
 						</li>
 					</ul>
 				</nav>
-			</div>
-		</header>
-		<div class="scene-paralax scene" id="reef">
-				
-			<div class="layer-paralax layer layer-split-paralax" id="reef-bg"
-				data-layer-z="infinity">
-				<div class="split-left"></div>
-				<div class="split-right"></div>
-			</div>
 			
-			<div class="layer-paralax layer layer-split-paralax" id="reef-corals-third" 
-				data-layer-z="10"
-				data-animate-shown="slide-in-up 0.2 1">
-				<div class="split-left"></div>
-				<div class="split-right"></div>
-			</div>
+        </header>
+        <div id="reef-section">
+            <div class="scene-paralax scene" id="reef" data-scene-width="1920" data-scene-height="800">
+                    
+                <div class="layer-paralax layer layer-split-paralax" id="reef-bg"
+                    data-layer-z="50">
+                    <div class="split-left"></div>
+                    <div class="split-right"></div>
+                </div>
+                
+                <div class="layer-paralax layer layer-split-paralax" id="reef-corals-third" 
+                    data-layer-z="10"
+                    data-animate-shown="slide-in-up 0.2 1">
+                    <div class="split-left"></div>
+                    <div class="split-right"></div>
+                </div>
 
-			<div class="layer-paralax layer layer-split-paralax" id="reef-corals-second" 
-				data-layer-z="20"
-				data-animate-shown="slide-in-up 0.2 1">
-				<div class="split-left"></div>
-				<div class="split-right"></div>
-			</div>
+                <div class="layer-paralax layer layer-split-paralax" id="reef-corals-second" 
+                    data-layer-z="20"
+                    data-animate-shown="slide-in-up 0.2 1">
+                    <div class="split-left"></div>
+                    <div class="split-right"></div>
+                </div>
 
-			<!-- <div class="layer-paralax layer layer-split-paralax" id="reef-fish" 
-				data-layer-z="15">
+                <!-- <div class="layer-paralax layer layer-split-paralax" id="reef-fish" 
+                    data-layer-z="15">
 
-				<div class="split-left">
-					<div class="fish-x">
-						<div class="fish-y">
-							<div class="fish-body">
-								<img src="fish.png" class="animate">
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="split-right">
-					<div class="fish-x">
-						<div class="fish-y">
-							<div class="fish-body">
-								<img src="fish.png" class="animate">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div> -->
+                    <div class="split-left">
+                        <div class="fish-x">
+                            <div class="fish-y">
+                                <div class="fish-body">
+                                    <img src="fish.png" class="animate">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="split-right">
+                        <div class="fish-x">
+                            <div class="fish-y">
+                                <div class="fish-body">
+                                    <img src="fish.png" class="animate">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
 
-			<div class="layer-paralax layer layer-split-paralax" id="reef-corals-first" 
-				data-layer-z="30"
-				data-animate-shown="slide-in-up 0.4 1">
-				<div class="split-left">
-				</div>
-				<div class="split-right"></div>
-			</div>
+                <div class="layer-paralax layer layer-split-paralax" id="reef-corals-first" 
+                    data-layer-z="30"
+                    data-animate-shown="slide-in-up 0.4 1">
+                    <div class="split-left">
+                    </div>
+                    <div class="split-right"></div>
+                </div>
 
-			<!-- <div class="layer" id="reef-text"
-				data-layer-z="0">
-				<h1>The end is near</h1>
-				<div>Every day we stray further from god, using environment-hostile sunscreen. It bleaches corals and change gender of fish.</div>
-			</div> -->
+                <!-- <div class="layer" id="reef-text"
+                    data-layer-z="0">
+                    <h1>The end is near</h1>
+                    <div>Every day we stray further from god, using environment-hostile sunscreen. It bleaches corals and change gender of fish.</div>
+                </div> -->
 
-			<div class="layer-paralax layer layer-split-paralax" id="reef-corals-zero" 
-				data-layer-z="0"
-				data-animate-shown="slide-in-up 0.4 1">
-				<div class="split-left">
-				</div>
-				<div class="split-right"></div>
-			</div>
-		</div>
-		
+                <div class="layer-paralax layer layer-split-paralax" id="reef-corals-zero" 
+                    data-layer-z="0"
+                    data-animate-shown="slide-in-up 0.4 1">
+                    <div class="split-left">
+                    </div>
+                    <div class="split-right"></div>
+                </div>
+            </div>
 
-		<script type="text/javascript" src="lib.js"></script>
-		<!-- <script type="text/javascript" src="mls.js"></script> -->
-		<script type="text/javascript" src="mlf.js"></script>
-		<script type="text/javascript" src="mlf.loading.js"></script>
-		<script type="text/javascript" src="mlf.animated.js"></script>
-		<script type="text/javascript" src="mlf.scene.js"></script>
-		<script type="text/javascript" src="igem.bubbles.js"></script>
-		<script type="text/javascript" src="mlf.header.js"></script>
+            <div id="reef-card" class="card">
+                Nowadays a great number of commercially produced sunscreens contain chemical compounds with a broad-spectrum ultraviolet coverage, such as oxybenzone and octinoxate, which are extremely toxic to the environment. Every year around 14,000 tons of sunscreen is washed into the oceans and seas, resulting in a dramatic increase of the toxicity level, causing a variety of pathologies to corals. 
+            </div>
+        </div>
+        <div id="molecule" class="map" data-map-width="1920" data-map-height="1023" data-map-pin-width="126"  data-map-pin-height="126">
+            <div class="pin" data-pin-x="237" data-pin-y="149">
+                <div class="icon" style="background-image:url(member-1.png)" ></div>
+                <div class="card">
+                    <div class="picture">
+                        <img src="member-1.png">
+                    </div>
+                    <div class="details">
+                        Fgynjy PTvtkm
+                    </div>
+                </div>
+            </div>
+            <div class="background"></div>
+        </div>
+        
+
+		<script type="text/javascript" src="main.js"></script>
 		<!-- <script type="text/javascript" src="animate.js"></script> -->
 		<script>
 

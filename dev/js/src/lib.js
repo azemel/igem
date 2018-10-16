@@ -51,7 +51,7 @@
 			var copy = {};
 			for ( var key in o ) {
 				if ( is.plain( o[key] ) ) {
-					copy[key] = plai.copy( o[key] );
+					copy[key] = plain.copy( o[key] );
 				} else if ( is.array( o[key] ) ) {
 					copy[key] = o[key].slice();
 				} else {
