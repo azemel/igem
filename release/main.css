@@ -132,7 +132,10 @@ h2 {
   margin: 30px 0; }
 
 .figure {
+  width: 100%;
   padding-bottom: 30px; }
+  .figure img {
+    width: 100%; }
   .figure .caption {
     padding: 3px 0;
     font-size: 14px;
@@ -374,8 +377,7 @@ h2 {
     filter: grayscale(100%); }
 
 #reef-section {
-  position: relative;
-  height: 800px; }
+  position: relative; }
   #reef-section .content {
     max-width: 1920px; }
   #reef-section #reef-card {
@@ -421,45 +423,42 @@ h2 {
   animation: 1s ease-out 0s slideInUp;
   animation-fill-mode: backwards; }
 
-#reef .spinner {
-  animation: pulse 2s ease-out 0s infinite alternate;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 70px;
-  height: 70px;
-  border-radius: 100%;
-  border: 1px solid #dde5ee;
-  background-color: transparent; }
-
-#reef #reef-bg {
-  top: 0px; }
-  #reef #reef-bg .split-right, #reef #reef-bg .split-left {
-    background-image: url(layer-bg.png); }
-
-#reef #reef-corals-first {
-  top: 0px; }
-  #reef #reef-corals-first .split-right, #reef #reef-corals-first .split-left {
-    background-image: url(layer-first.png); }
-
-#reef #reef-corals-second {
-  top: 0px; }
-  #reef #reef-corals-second .split-left, #reef #reef-corals-second .split-right {
-    background-image: url(layer-second.png); }
-
-#reef #reef-corals-third {
-  bottom: 0px; }
-  #reef #reef-corals-third .split-left, #reef #reef-corals-third .split-right {
-    background-image: url(layer-third.png); }
-
-#reef #reef-corals-zero {
-  bottom: 0px; }
-  #reef #reef-corals-zero .split-left, #reef #reef-corals-zero .split-right {
-    background-image: url(layer-zero.png); }
-  #reef #reef-corals-zero .split-right {
-    filter: none;
-    background-image: url(layer-zero-after.png); }
+#reef {
+  height: 800px; }
+  #reef .spinner {
+    animation: pulse 2s ease-out 0s infinite alternate;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    border: 1px solid #dde5ee;
+    background-color: transparent; }
+  #reef #reef-bg {
+    top: 0px; }
+    #reef #reef-bg .split-right, #reef #reef-bg .split-left {
+      background-image: url(layer-bg.png); }
+  #reef #reef-corals-first {
+    top: 0px; }
+    #reef #reef-corals-first .split-right, #reef #reef-corals-first .split-left {
+      background-image: url(layer-first.png); }
+  #reef #reef-corals-second {
+    top: 0px; }
+    #reef #reef-corals-second .split-left, #reef #reef-corals-second .split-right {
+      background-image: url(layer-second.png); }
+  #reef #reef-corals-third {
+    bottom: 0px; }
+    #reef #reef-corals-third .split-left, #reef #reef-corals-third .split-right {
+      background-image: url(layer-third.png); }
+  #reef #reef-corals-zero {
+    bottom: 0px; }
+    #reef #reef-corals-zero .split-left, #reef #reef-corals-zero .split-right {
+      background-image: url(layer-zero.png); }
+    #reef #reef-corals-zero .split-right {
+      filter: none;
+      background-image: url(layer-zero-after.png); }
 
 #process {
   padding-top: 40px;
@@ -593,7 +592,8 @@ h2 {
         #molecule .map .card .details .periodic {
           border: 1px solid #ea2d30;
           padding: 5px;
-          float: right; }
+          float: right;
+          margin-top: 10px; }
           #molecule .map .card .details .periodic .mass {
             float: left;
             font-size: 12px;
@@ -611,6 +611,14 @@ h2 {
           #molecule .map .card .details .periodic .full {
             text-align: center;
             font-size: 16px; }
+        #molecule .map .card .details .compound {
+          margin-top: 10px;
+          border: 1px solid #ea2d30;
+          padding: 10px;
+          float: right;
+          text-align: center;
+          font-size: 25px;
+          font-weight: 900; }
 
 .notebook {
   color: #dde5ee;
