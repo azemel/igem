@@ -55,7 +55,6 @@
         </section>
         <section class="article" >
             <div class="content">
-                <h2>Toxicity of modern sunscreen</h2>
                 <p>The goal of our project is to produce Mycosporine-like Amino Acids(shinorine and porphyra-334) through four reactions catalyzed by 4 different enzymes. (REF)</p>
                 <p>The initial goal of our model was to predict the yield of the reaction. For this we have constructed a mathematical model using Matlab Simbiology tools(file attached). We have derived ODEs for all the reactions(presented below).</p>
                 <p style="text-align: center">The first reaction is monosubstrate and the following three are bisubstrate.</p>
@@ -75,95 +74,65 @@
                 </ol>
                 <p style="text-align: center">ODEs:</p>
                 <ol class="cols fancy">
-                    <li class="col half">d[D4D]/dt=V<sub>m</sub>[S7D]/(Km+[S7P])</li>
-                    <li class="col half">d[4D]/dt=V<sub>m</sub>[SAM][D4D]/KsKm2 + Km1[SAM] +Km2[D4D]+[SAM][D4D]
-</li>
-                    <li class="col half">4-deoxygadusol + glycine + ATP⟶4mycosporine-glycine + ADP + phosphate + H</li>
-                    <li class="col half">mycosporine-glycine  + ATP + serine/threonine ⟶4shinorine/porphyra-334 + ADP + phosphate+H2O</li>
+                    <li class="col half">d[D4D]/dt=V<sub>m</sub>[S7D]/(K<sub>m</sub>+[S7P])</li>
+                    <li class="col half">d[4D]/dt=V<sub>m</sub>[SAM][D4D]/K<sub>s</sub>K<sub>m2</sub>+K<sub>m1</sub>[SAM]+K<sub>m2</sub>[D4D]+[SAM][D4D]</li>
+                    <li class="col half">d[M-Gly]/dt=V<sub>m</sub>[4D][ATP]/KsKm1+Km1[4D]+K<sub>m2</sub>[ATP]+[4D][ATP]</li>
+                    <li class="col half">d[MAA]/dt=V<sub>m</sub>[M-Gly][ATP]/KV<sub>s</sub>KV<sub>m1</sub>+KV<sub>m1</sub>[M-Gly]+KV<sub>m2</sub>[ATP]+[M-Gly][ATP]</li>
 
                 </ol>
-                <p>Every year up to 14,000 tons of sunscreen is being washed into the oceans and seas, resulting in a dramatic increase of the toxicity level and causing a variety of pathologies to corals<a class="reference" href="#ref-4">[4]</a>.</p>
-
-                <h2>Mycosporine-Like Amino Acids(MAA)</h2>
-                <p>Considering all these negative effects on the environment our team decided to look for safer options. Possible alternatives to current synthetic UV filters are Mycosporine-Like Amino Acids(MAA). MAAs are small, water-soluble, colorless molecules<a class="reference" href="#ref-7">[7]</a> produced by a variety of marine organisms, including cyanobacteria, fungi, microalgae, and macroalgae<a class="reference" href="#ref-8">[8]</a>. Nowadays, more than 30 different types of MAAs have been identified<a class="reference" href="#ref-9">[9]</a>. The structure of MAAs consists of cyclohexanone or cyclohexenimine chromophore attached with the nitrogen substituent of an amino acid or amino alcohol<a class="reference" href="#ref-10">[10]</a>. </p>
-                <p>Two types of MAAs, Shinorine and Porphyra-334 (Figure 1), which are originally isolated from red algae Porphyra umbilicalis have relatively high UV-absorption from 310 to 365 nm which covers UV-A and UV-B wavelengths<a class="reference" href="#ref-11">[11]</a>. While both of them are good UV-sunscreening compounds, Porphyra-334 also has anti-aging effects<a class="reference" href="#ref-12">[12]</a> and even works as an antioxidant<a class="reference" href="#ref-13">[13]</a>. Altogether, these compounds can be not only very useful ingredients in sunscreens and other creams but also harmless for marine life as they are protection mechanism of microorganisms<a class="reference" href="#ref-14">[14]</a>.</p>
-
-				<ul class="cols">
-                    <li class="col half">
-                        <div class="figure">
-                            <img src="shinorine.png">
-                            <div class="caption"><i>Figure 1.1.</i></div>
-                        </div>
-                    </li>
-                    <li class="col half">
-                        <div class="figure">
-                            <img src="porphyra-334.png">
-                            <div class="caption"><i>Figure 1.2.</i></div>
-                        </div>
-                    </li>
-                </ul>
-                <p>The only way of industrial production of MAAs nowadays is to extract them from red algae. This process takes time for the reason that algae are harvested from the wild and have long life cycle. It is also expensive because of the specific conditions (water temperature, nutrients) that these organisms need for growth. Specific lighting conditions are also required for optimal MAA production and therefore the concentration of these compounds is different from harvest to harvest<a class="reference" href="#ref-15">[15]</a> <a class="reference" href="#ref-16">[16]</a>. </p>
-                <p>To date, Helioguard 365 is the first commercially produced natural sunscreen which incorporates MAAs as UV-absorbents, protects skin from photo-aging and helps to prevent the appearance of lines and wrinkles<a class="reference" href="#ref-17">[17]</a>. </p>
-
-
-                <h2>MAA production</h2>
-                <p>Our team was inspired by the scientists from the University of Florida, who used Synechcystis sp. PCC6803  as a host for the heterologous production of Shinorine. Shinorine gene cluster was taken from filamentous cyanobacterium Fischerella sp PCC9339. By optimizing gene expression the yield of Shinorine was made comparable to a commercially used Shinorine producer.</p>
-                <p>The research has shown that it is possible to effectively produce MAAs in the laboratory with the aid of synthetic biology. This approach is cheaper and faster than farming<a class="reference" href="#ref-18">[18]</a>.</p>
-                <p>To obtain two natural UV-screening compounds, Shinorine and Porphyra 334, Tartu TUIT team is going to use 8 genes(in total): MysA, MysB, MysC, MysD and amir4256, amir4257, amir4258, amir4259. The idea of our project is to insert gene sequences from 2 different organisms, cyanobacterium Nostoc punctiforme and actinobacterium Actinosynnema mirum respectively.</p>
-                <p style="text-align: center">Shinorine and Porphyra 334 are synthesized via four-step enzymatic process:</p>
-                <ol class="fancy">
-                    <li>The intermediate of the pentose phosphate pathway, sedoheptulose-7-phosphate, is converted into dimethyl 4-deoxygadusol (DDG) by mysA/amir4259.</li>
-                    <li> DDG is then converted to 4-deoxygadusol (4-DG) by O-methytransferase (O-MT) enoded by mysB/amir4258.</li>
-                    <li> The ATP-grasp family protein encoded by mysC/amir4257 catalyzes the addition of glycine to 4-DG to form mycosporine-glycine. </li>
-                    <li> A non-ribosomal peptide synthetase (NRPS) homolog encoded by mysD/amir4256 catalyzes the last reaction, in which serine and threonine are added to mycosporine-glycine forming Shinorine and Porphyra-334 respectively<a class="reference" href="#ref-19">[19]</a> <a class="reference" href="#ref-20">[20]</a> <a class="reference" href="#ref-21">[21]</a>. </li>
+                <p>However, we have encountered a sudden problem: kinetic constants for the majority of used enzymes were not yet determined. We successfully gathered constants only for the mysA enzyme from the Nostoc punctiforme.</p>
+                <p>We have tried to find more information about the homological enzymes in similar organisms to have at least the rough approximation, but were unable to find any. In our research we used BRENDA, KEGG, UniProt. We have also attempted to reach the researchers working in this field but they were unable to provide required information<a href=" ">link to IHP page</a></p>
+                <p>At first, we expected that the lack of information would still allow to construct dependency graphs, but the amount of unknown constants were too big and the analytical solution turned out too complex for MATLAB to interpret the relation in the form of the graph.</p>
+                <p>At first, we expected that the lack of information would still allow to construct dependency graphs, but the amount of unknown constants were too big and the analytical solution turned out too complex for MATLAB to interpret the relation in the form of the graph.We have also created a more simple script using ode23 function in the matlab. It allows to output the graphs of the concentration to the time span for the products of all 4 reactions.</p>
+                <p>Despite lacking the values for the constants, with the help of this script we still were able to visualise the influence of the concentration changes in precursor and intermediates on the yield.</p>
+                <p>We have came to the conclusion, that our model can be used in the future when our system will start working and we will be able to approximate the constants by our own measurements. However, at the point our project is now it is impossible due to the time limitations. Nevertheless, we are planning to perform possible examinations in the future.</p>
+                <p>After failing to make a fully developed kinetical model and therefore making appropriate conclusions about the yield of the final products we have started to look for other options.</p>
+                <p>One of the specialists that we consulted (Ranko Gacesa) has noted that the rate constants measurements in vivo are rarely done, and in vitro measurements can be not very reliable. For that reason, we might have to run our own experiments to determine firstly the level of gene expression and secondly the enzyme activity.The choice of the promoters will depend on both of these factors since the enzymes catalyze the series of reactions the product of one being the substrate of another.</p>
+                <p>In our initial plan we intended to introduce the genes as a whole cassette using one of the three methods (Vegas, Gibson or CPEC) and only perform HPLC measurements for the final products (shinorine and porphyra-334). However R.Gacesa has recommended us to introduce genes one by one and control their work in a stepwise manner.</p>
+                <p>For this we have decided to use a SBY2 yeast strain free from selective markers and 4 centromeric yeast plasmids (Ura,Leu,His and Trp selection) and do 4 simultaneous transformations with one, two, three and four genes and check every step of the pathway.</p>
+                <p>When we will be able to acquire some initial information about the flux in the pathway, we will make some conclusions about the strength of the promoters that we have to use for each gene of our system to smooth out and regulate the flux through our pathway we have started to look for other options.</p>
+                <p>We were inspired by the<a href="https://www.nature.com/articles/s41467-018-03293-x#MOESM1">https://www.nature.com/articles/s41467-018-03293-x#MOESM1</a>paper and used some of their promoters in our work. We have chosen 5 promoters and rated them by the relative strength from 1 to 5. The total number of combinations is equal to 5^4 since we have 4 genes. However, it is really hard to test all of them and we need to make some predictions and assumption in order to narrow down the options. That is why we need the initial test. In our first strain we planned to use the strongest promoter (TDH3) with each gene. We assumed, that it will make gene expression level almost equal and will allow us to track down enzyme activities.</p>
+                <p>However, due to the time limits we were not able to run HPLC measurements on time. Therefore, we had to simplify the model using only theoretical assumptions.</p>
+                <p>Our idea was that with every step there will be natural deprivation in the concentrations of the products. Consequently, it is logical to assume that it is better to use stronger promoters for the first step gradually decreasing the strength of the promoter with every step.</p>
+                <p style="text-align: center">Here are the 16 combinations that we came up with:</p>
+                <p>During the research dedicated to the rate constants, we have also discovered that the concentration of the precursor: sedoheptulose 7-phosphate (S7P) is low in our model organism (S. cerevisiae) and this will negatively affect the yield of the final products.</p>
+                <p>Therefore, we have decided to redirect our modeling toward the optimization of the S7P concentration. S7P is an intermediate metabolite in the pentose phosphate pathway. It consists out of two phases: oxidative and non-oxidative. The first one is used to produce NADPH that is later used in the reductive biosynthesis, and C5 sugars like ribulose 5-phosphate. During the second (where S7P is produced) C5 sugars are converted into C3 and C6 ones.<a href="https://www.ncbi.nlm.nih.gov/books/NBK22416/">https://www.ncbi.nlm.nih.gov/books/NBK22416/</a></p>
+                <p>In addition, S7P can also be produced outside the ppp by the enzyme SHB17.(figure1)</p>
+                <p>Our first plan was to change the growth media to the xylulose. This way we are forcing yeast to follow the anaerobic pathway of xylose fermentation. S. Cerevisiae are unable to ferment xylose, but they can utilize its isomer - xylulose.(all the different xylose fermentation pathways lead to its formation, Dxylulose later participates in the non-oxidative phase of the ppp).We are increasing the S7P concentration by the addition of  its precursor into the media.</p>
+                <p>However, this approach has a significant drawback: the yield change is small compared to the price difference between the usual glucose media and xylulose one. Moreover, the media described in the article we used consists both out of xylose and xylose and requires specific preparation. In addition, the cell mass production and media consumption rate are lower.  It is also proven that the growth rate on the xylulose depends on the efficiency of the non-oxidative phase of ppp. That means, that the slower the consumption of the S7P(which we are trying to minimize), the slower the growth is.(The non-oxidative pentose phosphate pathway controls the fermentation rate of xylulose but not of xylose in Saccharomyces cerevisiae TMB3001)<a href="https://www.ncbi.nlm.nih.gov/pubmed/16348083">https://www.ncbi.nlm.nih.gov/pubmed/16348083</a></p>
+                <p>This disadvantages makes this method useless for our project, since we are seeking our system to be cost-effective and easy to use in the industry.</p>
+                <p>Next, we started to analyse the PPP and the S. Cerevisiae genes participating in it. In addition, we also looked at the genes that lead to the production of the S7P.<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4470864/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4470864/</a></p>
+                <p style="text-align: center">The following information about the genes is taken from the open KEGG database:</p>
+                <ol class="cols fancy">
+                    <li class="col half"> Tal1(Transaldolase, enzyme in the non-oxidative pentose phosphate pathway; converts sedoheptulose 7-phosphate and glyceraldehyde 3-phosphate to erythrose 4-phosphate and fructose 6-phosphate)</li>
+                    <li class="col half">NQM1(paralog of tal1)</li>
+                    <li class="col half">Tkl1 and Tkl2(Transketolase; catalyzes conversion of xylulose-5-phosphate and ribose-5-phosphate to sedoheptulose-7-phosphate and glyceraldehyde-3-phosphate in the pentose phosphate pathway; needed for synthesis of aromatic amino acids)</li>
+                    <li class="col half">Zwf1(Glucose-6-phosphate dehydrogenase (G6PD); catalyzes the first step of the pentose phosphate pathway)</li>
+                    <li class="col half">Shb17(Sedoheptulose bisphosphatase involved in riboneogenesis; dephosphorylates sedoheptulose 1,7-bisphosphate)</li>
+                    <li class="col half">pgi1(Phosphoglucose isomerase, catalyzes the interconversion of glucose-6-phosphate and fructose-6-phosphate)</li>
+                    <li class="col half">Pho13 (phosphatase, induces tal1, «PHO13 deletion-induced transcriptional activation prevents sedoheptulose accumulation during xylose metabolism in engineered Saccharomycescerevisiae»)</li>
                 </ol>
+                <p>Genes that induce the consumption of S7P: Tal1, NQM1, TKL1, TKL2</p>
+                <p>Genes that induce the production of S7P: SHB17</p>
+                <p>Our first plan was to change the expression of these genes, put weaker promoter to the Tal1, NQM1, TKL1 and TKL2 and stronger one to SHB17.We can also put stronger promoter to the first gene from the MAA biosynthesis pathway to redirect the flux of S7P.</p>
+                <p>We were also thinking about knocking down some genes to achieve even better outcome.The tal1 null mutant is viable; the null mutant of paralog nqm1 is viable; the tal1 nqm1 double mutant is inviable or displays a growth defect. The tkl1 null mutant is viable; the null mutant of paralog tkl2 is viable; the tkl1 tkl2 double mutant is viable but auxotrophic for aromatic amino acids.(Information about the viability of the null mutants is taken from the open source yeastgenome.org)</p>
+                <p>It is also proven that the deletion of tal1 gene in combination with pgi1 significantly increases the yield of S7P. Change of the media to glucose also positively affects the yield of the S7P.<a href="https://febs.onlinelibrary.wiley.com/doi/full/10.1111/j.1432-1033.1990.tb15440.x">https://febs.onlinelibrary.wiley.com/doi/full/10.1111/j.1432-1033.1990.tb15440.x</a></p>
+                <p>In addition, we have found the research, where the simultaneous deletion of tal1 and nqm1 increases the flux through shb17. In our opinion, in this manipulation with the combination with a strong promoter to shb17 can give high production of S7P.<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3163394/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3163394/</a></p>
+                <p>Double null mutant(tal1,tkl1) is also viable, however there is no information about the concentration of S7P in this strain.<a href="https://www.ncbi.nlm.nih.gov/pubmed/8299150">https://www.ncbi.nlm.nih.gov/pubmed/8299150</a></p>
+                <p>Here is presented a logical pathway, that illustrate, how the expression of certain genes affect the concentration of S7P.</p>
                 <div class="figure">
-                    <img src="pathway.png">
-                    <div class="caption"><i>Figure 2</i> Pathway</div>
-                </div>
+  							  <img src="image7.png">
+  							  <div class="caption"><i>Figure 1</i> Logical pathway</div>
+  						  </div>
+                <p>Switches represent the presence and absence of the genes, while the red light represents the active production of the S7P.(figure2)</p>
+                <p>Between TKL1 and TKL2 we have put XOR gate, since only the absence of one of the genes(not both) will increase the S7P concentration and simultaneously not reduce the growth rate significantly.</p>
+                <p>Pho13 and Pgi1 increase the influence of the deletion of Tal1, therefore, they are connected with the AND gate.</p>
+                <p>However, XOR gate between these genes and zwf1 symbolize less critical fluctuations in the triple mutant. </p>
+                <p>The following OR gate represents that both knockouts change S7P concentrations but not interrupt the influence of each other.</p>
+                <p>The last gate is AND that represents the accumulative effect of the deletions.</p>
+                <p>In our opinion, it would be beneficial to switch off TKL1, TAL1, NQM1, PHO13, PGI1</p>
 
-                <h2>Yeast and yeast extract</h2>
 
-                <p>Our team has decided to synthesize MAAs in S. cerevisiae, since yeast cultures have some important advantages. First of all, it is easier to obtain high cell densities with an optimal protein production rate and to control growth and translation by changing the media<a class="reference" href="#ref-22">[22]</a> <a class="reference" href="#ref-23">[23]</a>. Moreover, integrated DNA is more stable in yeast than in prokaryotes.</p>
-                <p>Our idea is to produce MAA enriched yeast extract.This approach makes it possible to skip the purification step. </p>
-                <p>There are several reasons why we think that yeast extract is a good component for our sunscreen:</p>
-                <ol class="fancy">
-                    <li> It does not cause irritation<a class="reference" href="#ref-23">[23]</a>.</li>
-                    <li> It is proven to be a good antioxidant due to the presence of beta-glucan<a class="reference" href="#ref-24">[24]</a>.</li>
-                    <li> It can moisturize, nourish and is able to activate both, collagen production in the skin and cell regeneration.<a class="reference" href="#ref-25">[25]</a>.</li>
-                </ol>
-                <p>These properties will make the sunscreen healing, so it not only protects the skin but also helps to fight the consequences of sunburns.</p>
-                <p>Therefore, we believe that this combination will be advantageous and will make our product multifunctional.</p>
-
-                <div class="hr"></div>
-                <h3>References:</h3>
-                <ol class="references">
-                    <li><a name="ref-1"></a> John D’Orazio, Stuart Jarrett,  Alexandra Amaro-Ortiz and  Timothy Scott. UV Radiation and the Skin (2013)</li>
-                    <li><a name="ref-2"></a> Zuzana Klimová, Jarmila Hojerová, Silvia Pažoureková. Current problems in the use of organic UV filters to protect skin from excessive sun exposure(2013)</li>
-                    <li><a name="ref-3"></a> R. Danovaro, L. Bongiorni, C. Corinaldesi, D. Giovannelli, E. Damiani, P. Astolfi, L. Greci, and A. Pusceddu: Sunscreens Cause Coral Bleaching by Promoting Viral Infections (2008) </li>
-                    <li><a name="ref-4"></a> C.A.Downs, Esti Kramarsky-Winter, Roee Segal, John Fauth, Sean Knutson, Omri Bronstn, Frederic R. Ciner, Rina Jeger, Yona Lichtenfeld, Cheryl M. Woodley, Paul Pennington, Kelli Cadenas, Ariel Kushmaro, Yossi Loya.Toxicopathological Effects of the Sunscreen UV Filter, Oxybenzone (Benzophenone-3), on Coral Planulae and Cultured Primary Cells and Its Environmental Contamination in Hawaii and the U.S. Virgin Islands (2015)</li>
-                    <li><a name="ref-5"></a> Hund-Rinke Kerstin, Markus Simon. Ecotoxic Effect of Photocatalytic Active Nanoparticles (TiO2) on Algae and Daphnids (2006)</li>
-                    <li><a name="ref-6"></a> Mana Yung, Catherine Mouneyrac, Kenneth Mei Yee Leung. Ecotoxicity of Zinc Oxide Nanoparticles in the Marine Environment (2015)</li>
-                    <li><a name="ref-7"></a> S.P. Singh, S. Kumari, R. P. Rastogi, K. L. Singh, R. P. Sinha. Mycosporine-like amino acids(MAAs): Chemical structure, biosynthesis and significance as UV-absorbing/screening compounds(2008)</li>
-                    <li><a name="ref-8"></a> R.P.Sinha, S. P. Singh, D, Hader. Database on mycosporines and mycosporine-like amino acids (MAAs) in fungi, cyanobacteria, macroalgae, phytoplankton and animals (2007) </li>
-                    <li><a name="ref-9"></a> Y. Tsuge, H. Kawaguchi, S.Yamamoto, Y. Nishigami, M. Sota, C. Ogino & A. Kondo. Metabolic engineering of Corynebacterium glutamicum for production of sunscreen shinorine (2018)</li>
-                    <li><a name="ref-10"></a> Md A. Rahman, S. Sinha, S. Sachan, G. Kumar, S. K. Singh, and S. Sundaram. Analysis of proteins involved in the production of MAA׳s in two Cyanobacteria Synechocystis PCC 6803 and Anabaena cylindric (2014)</li>
-                    <li><a name="ref-11"></a> Y. Tsuge, H. Kawaguchi, S.Yamamoto, Y. Nishigami, M. Sota, C. Ogino & A. Kondo. Metabolic engineering of Corynebacterium glutamicum for production of sunscreen shinorine (2018) </li>
-                    <li><a name="ref-12"></a> J.Ryu, S.J. Park, I.H. Kim, Y.H.Choi, T.J. Nam. Protective effect of porphyra-334 on UVA-induced photoaging in human skin fibroblasts(2014) </li>
-                    <li><a name="ref-13"></a> J. M. Shick, W.C. Dunlap.  Mycosphorine-Like Amino Acids and Related Gadusols: Biosynthesis, Accumulation, and UV-Protective Functions in Aquatic Organisms (2002</li>
-                    <li><a name="ref-14"></a> N. N. Rosic, S.dove. Mycosporine-Like Amino Acids from Coral Dinoflagellates(2011)</li>
-                    <li><a name="ref-15"></a> – </li>
-                    <li><a name="ref-16"></a> P. Baweja,Savindra Kumar, Dinabandhu Sahoo and Ira A. Levine. Biology of Seaweeds (2016) </li>
-                    <li><a name="ref-17"></a> G.Yang, M.A. Cozad, D.A. Holland, Y. Zhang, H. Luesch, Y. Ding. Photosynthetic Production of Sunscreen Shinorine Using an Engineered Cyanobacterium (2018) </li>
-                    <li><a name="ref-18"></a> G. Yang, M. A. Cozad, D. A. Holland, Y. Zhang, H. Luesch , and Y. Ding. Photosynthetic Production of Sunscreen Shinorine Using an Engineered Cyanobacterium(2018) </li>
-                    <li><a name="ref-19"></a> Y.Tsuge, H. Kawaguchi, S. Yamamoto, Y. Nishigami, M. Sota, C. Ogino & A. Kondo. Metabolic engineering of Corynebacterium glutamicum for production of sunscreen shinorine(2018)</li>
-                    <li><a name="ref-20"></a> R. P. Rastogi, Rajeshwar P. Sinha, S. H. Moh, T. K. Lee, S. Kottuparambil, Y. Kim, J. Rhee, E. Choi, M. T. Brown, D. Häder, T. Han. Ultraviolet radiation and cyanobacteria (2014) </li>
-                    <li><a name="ref-21"></a> Q. Gao and F. Garcia-Pichel. An ATP-Grasp Ligase Involved in the Last Biosynthetic Step of the Iminomycosporine Shinorine in Nostoc punctiforme ATCC 29133 (2011) </li>
-                    <li><a name="ref-22"></a>  Yeast Expression System, Genway Biotech, Inc <a href="https://www.genwaybio.com/technologies/protein-expression/yeast-expression">https://www.genwaybio.com/technologies/protein-expression/yeast-expression</a></li>
-                    <li><a name="ref-23"></a> L.R. Gaspar, F.B. Camargo Jr., M.D. Gianeti, P.M.B.G. Maia Campos.Evaluation of dermatological effects of cosmetic formulations containing Saccharomyces cerevisiae extract and vitamins (2008) </li>
-                    <li><a name="ref-24"></a> N. Lei, M. Wang, L. Zhang, S. Xiao, C. Fei, X. Wang, K. Zhang, W. Zheng, C. Wang, R. Yang, and F. Xue. Effects of Low Molecular Weight Yeast β-Glucan on Antioxidant and Immunological Activities in Mice (2015) </li>
-                    <li><a name="ref-25"></a> Natakankitkul S, Homdok P, Wandee P, Krisdaphong T, Toida T . Development of skin care cosmetic from yeast beta-glucans (2016) </li>
-                </ol>
             </div>
         </section>
         <footer id="footer">
