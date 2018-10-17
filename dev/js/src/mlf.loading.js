@@ -36,8 +36,8 @@
 		}
 
 		if ( this._images.length === 0 ) {
-            setTimeout( this.trigger.bind( this, { type: "images-loaded", target: this } ), 2000 );
-            // this.trigger( { type: "images-loaded", target: this } );
+            // setTimeout( this.trigger.bind( this, { type: "images-loaded", target: this } ), 2000 );
+            this.trigger( { type: "images-loaded", target: this } );
 		}
 	};
 
