@@ -1,0 +1,138 @@
+.scene 
+    position: relative
+    width: 100%
+    overflow: hidden
+
+    .layer 
+        display: none
+        height: 100%
+        position: absolute
+        width: 100%
+
+    .layer-paralax 
+        transform: translate3d(0px, 0px, 0px)
+
+    .layer-split-paralax 
+        .split-left, .split-right
+            background-repeat: no-repeat
+            background-origin: border-box
+            height: 100%
+            position: absolute
+            background-position-x: 0%
+            overflow: hidden
+
+        .split-left 
+            left: 0
+            right: 50%
+        
+        .split-right 
+            left: 50%
+            right: 0
+            filter: grayscale(100%)
+
+
+#reef-section
+    position: relative
+    // margin-bottom: 6%
+
+    .content
+        max-width: 1920px
+   
+    #reef-card 
+        +box-glow($color-highlight-red)
+        background-color: darken($color-bg-main, 0.5)
+        color: $color-fg-main
+        border-top-right-radius: 100px
+        font-size: 18px
+        font-weight: 300
+        position: relative
+        width: 55%
+        top: -150px
+        left: 5%
+        padding: 40px
+
+        @media(min-width: 1366px) and (max-width: 1599px)
+            top: -100px
+
+        @media(min-width: 1024px) and (max-width: 1366px)
+            top: -80px
+            width: 70%
+
+        @media(max-width: 1024px)
+            position: static
+            border-top-right-radius: 0px
+            border-bottom-right-radius: 100px
+            width: 100%
+   
+@keyframes pulse 
+	from 
+		box-shadow: none
+	to 
+        box-shadow: 0 0 5px #fff, 0 0 10px $color-highlight, 0 0 15px $color-highlight, 0 0 17px $color-highlight, 0 0 30px $color-highlight, 0 0 50px $color-highlight, 0 0 75px $color-highlight, 0 0 5px #fff inset, 0 0 10px $color-highlight inset, 0 0 15px $color-highlight inset, 0 0 17px $color-highlight inset, 0 0 30px $color-highlight inset
+
+@keyframes slideInUp 
+	from 
+		transform: translate3d(0, 100%, 0)
+		opacity: 0.5
+	to 
+		transform: translate3d(0, 0%, 0)
+
+  
+
+.slide-in-up 
+	animation: 1s ease-out 0s slideInUp
+	animation-fill-mode: backwards
+
+
+#reef 
+    .spinner
+        animation: pulse 2s ease-out 0s infinite alternate
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        width: 70px
+        height: 70px
+        border-radius: 100%
+        border: 1px solid $color-fg-main
+        background-color: transparent
+
+     
+    #reef-bg 
+        top: 0px
+
+        .split-right, .split-left 
+            background-image: url(layer-bg.png)
+
+    #reef-corals-first 
+        top: 0px
+
+        .split-right, .split-left 
+            background-image: url(layer-first.png)
+
+    #reef-corals-second 
+        top: 0px
+
+        .split-left, .split-right 
+            background-image: url(layer-second.png)
+
+    #reef-corals-third 
+        bottom: 0px
+
+        .split-left, .split-right 
+            background-image: url(layer-third.png)
+
+
+    #reef-corals-zero 
+        bottom: 0px
+
+        .split-left, .split-right 
+            background-image: url(layer-zero.png)
+
+        .split-right 
+            filter: none
+            background-image: url(layer-zero-after.png)
+
+
+
+

@@ -1,0 +1,43 @@
+#process
+    padding-top: 40px
+    padding-bottom: 40px
+
+    .content 
+        @extend %clearfix
+        margin: 0 auto
+        max-width: 1400px
+    
+    img 
+        float: left
+        width: 47%
+    
+    .card
+        border-top-right-radius: 100px
+        background-color: darken($color-bg-main, 0.5)
+        float: right
+        +box-glow($color-highlight)
+        font-size: 18px
+        font-weight: 300
+        width: 43%
+        margin-right: 5%
+        margin-top: 5%
+        padding: 40px
+
+    @media (max-width: 1366px) 
+        padding-top: 80px
+        .card
+            margin-top: 0
+
+            
+    @media (max-width: 1024px)
+        img
+            background-color: $color-bg-main
+            box-sizing: border-box
+            float: none
+            width: 100%
+            padding: 0 20px
+        .card
+            float: none
+            width: 100%
+            border-top-right-radius: 0px
+            border-bottom-right-radius: 100px

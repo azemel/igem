@@ -1,25 +1,31 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i')
 
-
 $color-hover: hsla(0, 0%, 0%, 0.2)
 $color-bg-main: #181e33
 $color-fg-main: #dde5ee
 $color-bg-dark: black
 $color-fg-light: white
 
+$color-highlight: #50b1be
+$color-highlight-red: #ea2d30
+
 $header-height: 80px
 
-$color-highlight: #50b1be
 
+=box-glow($color)
+    box-shadow: 0 0 5px #fff, 0 0 10px $color, 0 0 15px $color, 0 0 17px $color, 0 0 30px $color
+
+=box-glow-bottom($color)
+    box-shadow: 0 5px 5px -5px #fff, 0 10px 10px -10px $color, 0 15px 15px -15px $color, 0 17px 17px -17px $color, 0 30px 30px -30px $color 
+
+=text-glow($color) 
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px $color, 0 0 35px $color, 0 0 40px $color, 0 0 50px $color, 0 0 75px $color
+     
 html, body 
     font-family: 'Roboto'
     font-size: 16px
     background-color: $color-bg-main
     min-height: 100%
-
-%tmp
-    background-color: white
-    // outline: 1px solid black
 
 
 h2 
@@ -27,28 +33,106 @@ h2
     font-weight: 100
     font-size: 36px
 
-a.reference 
-    font-size: 12px
-    vertical-align: super
-    padding: 0px 0px
 
-.article
+.banner 
+    padding: 20px 0 0
+    .title
+        padding: 30px
+        font-size: 100px
+        font-weight: 100
+        color: $color-fg-main
+        text-align: center  
+
+    @media (max-width: 1024px)
+        padding-top: 50px
+        .title
+            font-size: 60px
+
+
+.article 
+    color: $color-fg-main
+    padding-bottom: 60px
+    font-size: 18px
+
     p, li 
         text-align: justify
+    
+    h2, p
+        margin: 0
+
+    h2,p, ol, ul
+        margin-top: 0
+        margin-bottom: 0
+        padding: 0 0 30px
+
+    h2
+        padding-top: 20px
+    h3
+        text-align: center
+    a 
+        color: $color-highlight
+        text-decoration: none
+        
+    a.reference 
+        font-size: 12px
+        vertical-align: super 
+        padding: 0px 0px
 
 
+    ol.fancy
+        list-style-type: none
+        counter-reset: ol-counter
+        li
+            counter-increment: ol-counter
+
+            &::before
+                box-shadow: 0 0 5px $color-highlight
+                content: counter(ol-counter)
+                background-color: lighten($color-highlight, 10%)
+                border-radius: 100%
+                color: $color-bg-main
+                font-weight: 900
+                padding: 3px 8px 2px
+                line-height: 20px
+                margin: 4px 10px 4px 0
+                float: left; 
+            
+            &::after
+                content: ''
+                clear: both
+                display: table
+    .references
+        padding-left: 18px
+        li
+            padding-left: 10px   
+.hr
+    width: 100%
+    height: 1px
+    background-color: $color-fg-main
+    margin: 30px 0
+        
 .figure 
+    padding-bottom: 30px
     .caption
         padding: 3px 0
         font-size: 14px
         text-align: center
 
+.col
+    .figure
+        padding-bottom: 0
+
 %box-glow 
     box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px $color-highlight, 0 0 20px $color-highlight, 0 0 35px $color-highlight, 0 0 40px $color-highlight, 0 0 50px $color-highlight, 0 0 75px $color-highlight
 
-$color-highlight-red: #ea2d30
 %box-glow-red
     box-shadow: 0 0 10px rgba(255,255,255,0.7), 0 0 10px $color-highlight-red, 0 0 15px $color-highlight-red, 0 0 20px $color-highlight-red, 0 0 50px opacify($color-highlight-red, 0.4)
+
+%text-glow-red, .text-glow-red
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px $color-highlight-red, 0 0 35px $color-highlight-red, 0 0 40px $color-highlight-red, 0 0 50px $color-highlight-red, 0 0 75px $color-highlight-red
+        
+.text-glow-blue 
+    +text-glow($color-highlight)
 
 
 .card 

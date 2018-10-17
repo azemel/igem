@@ -19,12 +19,12 @@
 	}
 
 	function animate( animation ) {
-		if ( animation.type == "css" ) {
-			console.log( this.element.style  );
+        if ( animation.type == "css" ) {
+            console.log( animation );
 			this.element.style["animation-duration"] = animation.duration + "s";
 			this.element.style["animation-delay"] = animation.delay + "s";
 			this.element.className += " " + animation.name;
-
+            console.log( this.element.className );
 			this.element.addEventListener( "animationend", deanimate.bind( this, animation ), { once: true, passive: true }  ); 
 		}
 	}

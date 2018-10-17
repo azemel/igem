@@ -12,10 +12,17 @@ mlf.defineComponent("Layer", ["Animated"], {
 } );
 
 mlf.defineComponent( "Scene", ["ImagesWaiting"], {
-	className: "scene",
+    className: "scene",
 
-	_initScene: function() {
+    _initScene: function() {
         this.scene = {}
+        this.scene.playing = false;
+        
+        var spinner = document.createElement( "div" );
+        spinner.className = "spinner";
+        this.element.appendChild( spinner );
+        this.scene.spinner = spinner;
+        
         this.on( "images-loaded", this.play.bind( this ) );
         window.addEventListener( "resize", this.resize.bind( this ) );
     },
@@ -23,10 +30,13 @@ mlf.defineComponent( "Scene", ["ImagesWaiting"], {
     resize: function() {
         var w = this.element.parentElement.clientWidth;
 
+        if ( w > this._options.scene.width ) {
+            w = this._options.scene.width;
+        }
+
         this.scene.width = w;
         this.scene.height = w * this._options.scene.height / this._options.scene.width;
         
-
         this.element.style.width = this.scene.width + "px";
         this.element.style.height = this.scene.height + "px";
     },
@@ -45,7 +55,9 @@ mlf.defineComponent( "Scene", ["ImagesWaiting"], {
 		}
 	},
 
-	play: function() {
+    play: function() {
+        this.scene.spinner.style.display = "none";
+        this.scene.playing = true;
 		for ( var i = 0, l = this._children.length; i < l; i++ ) {
 			this._children[i].play();
 		}
@@ -65,10 +77,15 @@ mlf.defineComponent( "ParalaxLayer", "Layer", {
     },
     
     resize: function() {
-        this.element.style.width = 100 + Math.round( 100 / this._options.layer.z ) + "%";
+        this.element.style.width = 100 + Math.ceil( 100 / this._options.layer.z ) + "%";
         
-		this.element.style.visibility = null;
-        this.element.style.display = "block";	
+        var flag = false;
+        if ( !this.parent.scene.playing ) {
+            this.element.style.visibility = "hidden";
+            this.element.style.display = "block";
+            flag = true;
+        }
+
         this.paralax.width = this.element.offsetWidth;
         this.paralax.diff = Math.ceil( ( this.paralax.width - this.parent.scene.width ) / 2 );
         
@@ -85,15 +102,14 @@ mlf.defineComponent( "ParalaxLayer", "Layer", {
 				this.right.children[i].style.position = "absolute";
 			}
 		}
-		
+    
+        if ( flag ) {
+            this.element.style.display = "none";
+            this.element.style.visibility = null;
+        }
     },
 
 	play: function() {
-		
-			
-		//this.element.style.height = 100 + Math.round( 100 / this._options.layer.z ) + "%";
-		
-		//this.element.style.top = this.parent.element.offsetHeight / 2 - this.element.offsetHeight / 2;
 
 		this.show();
 		this.redraw();
@@ -130,21 +146,23 @@ mlf.defineComponent( "ParalaxScene", "Scene", {
     _initParalaxScene: function() {
         this.paralax = {
             origin: {},
-			shift: {
-				x: 0,
-				y: 0,
-			},
-			ratio: 0.5
+            shift: {
+                x: 0,
+                y: 0,
+            },
+            ratio: 0.5
         }
+        this.resize();
     },
 
     resize: function() {
         mlf.SceneComponent.prototype.resize.call( this );
         
-		this.paralax.origin =  {
+        this.paralax.origin = {
             x: this.scene.width / 2,
             y: this.scene.height / 2,
         };
+        this.paralax.margin = ( document.body.offsetWidth - this.scene.width ) / 2;
         this.paralax.shift = {
             x: 0,
             y: 0,
@@ -159,29 +177,31 @@ mlf.defineComponent( "ParalaxScene", "Scene", {
     },
 
     play: function() {
-        this.resize();
         
 		mlf.SceneComponent.prototype.play.call( this );
 
-
+        this.redraw();  
 		this.element.addEventListener( "mousemove", ( function( e ) {
 			this.recalcualte( e );
             this.redraw();
 		} ).bind( this ) );
 	},
 
-	recalcualte: function( e ) {
-		this.paralax.shift.x = e.clientX - this.paralax.origin.x;
+    recalcualte: function( e ) {
+        console.log( this.paralax.margin );
+        var x = e.clientX - this.paralax.margin;
+		this.paralax.shift.x = x - this.paralax.origin.x;
 		
-		this.paralax.cursor = e.clientX;
-		var ratio =  e.clientX / this.scene.width;
+		this.paralax.cursor = x;
+		var ratio =  x / this.scene.width;
 		
 		ratio = Math.min( 1, ratio );
 		ratio = Math.max( 0, ratio );
 		this.paralax.ratio = ratio;
 	},
 
-	redraw: function() {
+    redraw: function() {
+        if ( !this.scene.playing ) return;
 		for ( var i in this._children ) {
 			if ( "redraw" in this._children[i] ) {
 				this._children[i].redraw();

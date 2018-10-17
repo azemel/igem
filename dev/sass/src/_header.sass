@@ -15,7 +15,7 @@
         transform: translate(-50%, 0)
         left: 50%
         text-decoration: none
-        padding: 5px
+        padding: 7px
         height: $header-height
 
         img             
@@ -28,9 +28,6 @@
         li 
             cursor: default
             white-space: nowrap
-            
-            &:hover  
-                background-color: $color-hover
 
         > li 
             position: relative
@@ -44,12 +41,12 @@
 
     .nav-button 
         display: none
-        height: 60px
+        height: $header-height
         left: 0
         padding: 10px
         position: absolute
         top: 0
-        width: 60px
+        width: $header-height
     
         i 
             background-color: $color-fg-main
@@ -86,7 +83,7 @@
         width: 100%
         background-color: $color-bg-main
         // box-shadow: 0px -30px 30px -30px hsla(187, 46%, 53%, 0.5) inset, 0px -3px 3px -3px hsla(187, 50%, 100%, 0.5) inset;
-        box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px $color-highlight, 0 0 20px $color-highlight, 0 0 35px $color-highlight, 0 0 40px $color-highlight, 0 0 50px $color-highlight, 0 0 75px $color-highlight
+        box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px $color-highlight, 0 0 20px $color-highlight, 0 0 35px $color-highlight, 0 0 40px $color-highlight
         
 
 
@@ -96,10 +93,12 @@
 @media (min-width: $width-tablet + 1)
     .header
         .navigation
+            position: relative
+            z-index: 200
             width: 768px
             margin: 0 auto
-            font-size: 20px
-            font-weight: 300
+            font-size: 18px
+            font-weight: 400
         .menu
             width: 40%
             > li
@@ -115,18 +114,28 @@
                     position: absolute
                     top: $header-height
                     background-color: $color-bg-main
+                    +box-glow-bottom($color-highlight)
+                    border-top: 2px solid $color-highlight   
+                    // border-bottom: 2px solid $color-highlight
+                    z-index: -1
+                    min-width: 200px
+                    
                     a
                         color: $color-fg-main
-                        padding: 8px 20px
-                        margin: 1px 0px 0px 0px;
-
+                        padding: 15px 20px
+                        text-decoration: none;
                         &:hover 
-                            background-color: hsla(187, 46%, 53%, 0.1)
-                            box-shadow: 30px 0px 30px -30px hsla(187, 46%, 53%, 0.5) inset, 3px 0px 3px -3px hsla(187, 50%, 100%, 0.5) inset, -30px 0px 30px -30px hsla(187, 46%, 53%, 0.5) inset, -3px 0px 3px -3px hsla(187, 50%, 100%, 0.5) inset,;
+                            background-color: transparentize($color-highlight, 0.9)
+                            //+box-glow-v($color-highlight)
+                            // backgrokund-color: hsla(187, 46%, 53%, 0.1)
+                            // box-shadow: 30px 0px 30px -30px hsla(187, 46%, 53%, 0.5) inset, 3px 0px 3px -3px hsla(187, 50%, 100%, 0.5) inset, -30px 0px 30px -30px hsla(187, 46%, 53%, 0.5) inset, -3px 0px 3px -3px hsla(187, 50%, 100%, 0.5) inset,;
                     
-                &:hover 
-                    background-color:  hsla(187, 46%, 53%, 0.1), black
-                    box-shadow: 30px 0px 30px -30px hsla(187, 46%, 53%, 0.5) inset, 3px 0px 3px -3px hsla(187, 50%, 100%, 0.5) inset, -30px 0px 30px -30px hsla(187, 46%, 53%, 0.5) inset, -3px 0px 3px -3px hsla(187, 50%, 100%, 0.5) inset,;
+                &:hover
+                    background-color: transparentize($color-highlight, 0.9)
+                    // background-color:  hsla(187, 46%, 53%, 0.1), black
+                    // +box-glow-inset($color-highlight)
+                    // background-color: $color-highlight
+                    // box-shadow: 30px 0px 30px -30px hsla(187, 46%, 53%, 0.5) inset, 3px 0px 3px -3px hsla(187, 50%, 100%, 0.5) inset, -30px 0px 30px -30px hsla(187, 46%, 53%, 0.5) inset, -3px 0px 3px -3px hsla(187, 50%, 100%, 0.5) inset,;
                     .submenu 
                         display: block
 
@@ -152,34 +161,36 @@
             display: block
         
         .navigation 
-            background-color: $color-bg-dark
+            background-color: $color-bg-main
+            border-top: 2px solid $color-highlight
             max-height: 100%
             min-width: 280px
             color: $color-fg-light
             opacity: 0
             overflow: auto
             bottom: 0px
-            top: 60px
+            top: $header-height
             left: 0
             transform: translateX(-100%)
             transition: transform 0.3s 0s, opacity 0.3s 0s
             position: fixed
             width: auto
-            z-index: 10
+            z-index: 100
             padding-top: 10px
         
 
         .menu 
             > li > span 
                 padding: 0 20px
-                line-height: 40px
-
+                line-height: 60px
+                display: block;
             .submenu 
-                background-color: hsla(0,0%,100%, 0.2)
+                background-color: transparentize($color-highlight, 0.9)
 
                 a 
                     padding: 0 30px
-                    line-height: 40px
+                    line-height: 60px
+                    color: $color-fg-main
 
             .menu-item-branch
                 .label::before 
@@ -225,13 +236,29 @@
         .nav-button i::after 
             transform: translateY(0) rotate(45deg)
         
-
-.banner 
-    .title
-        padding: 30px
-        font-size: 100px
-        font-weight: 100
-        color: $color-fg-main
-        text-align: center  
-        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px $color-highlight, 0 0 35px $color-highlight, 0 0 40px $color-highlight, 0 0 50px $color-highlight, 0 0 75px $color-highlight
+        // text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px $color-highlight, 0 0 35px $color-highlight, 0 0 40px $color-highlight, 0 0 50px $color-highlight, 0 0 75px $color-highlight
         
+
+
+#footer
+    border-top: 1px solid $color-highlight
+    // box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px $color-highlight, 0 0 20px $color-highlight, 0 0 35px $color-highlight, 0 0 40px $color-highlight, 0 0 50px
+    padding: 20px 0
+
+    h3
+        color: $color-fg-main
+        text-align: center
+        font-size: 20px
+    .logos
+        padding: 0
+        margin: 0 auto
+        display: table
+        text-align: center
+
+        li
+            display: inline-block
+            padding: 5px
+            img
+                height: 80px
+                background-color: white
+                opacity: 0.9

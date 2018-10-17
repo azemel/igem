@@ -4,140 +4,259 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="main.css">
 	</head>
-	<body>
+	<body> 
 		<header class="header" data-stick="#reef">
-				<a class="logo" href="index.html"><img src="logo.svg"></a>
-                <nav class="navigation" data-breakpoint="768">
-					<ul class="menu menu-left">
-						<li class="menu-item-branch">
-							<span class="label">Project</span>
-							<ul class="submenu">
-								<li><a href="description.html">Description</a></li>
-								<li><a href="results.html">Results</a></li>
-								<li><a href="Design.html">Design</a></li>
-								<li><a href="Modeling.html">Modeling</a></li>
-							</ul>
-						</li>
-						<li class="menu-item-branch">
-							<span class="label">Lab</span>
-							<ul class="submenu">
-								<li href="interlab.html"><a>InterLab</a></li>
-								<li href="experiments.html"><a>Experiments</a></li>
-								<li href="notebook.html"><a>Notebook</a></li>
-								<li href="safety.html"><a>Safety</a></li>
-							</ul>
-						</li>
-					</ul>
-					
-					<ul class="menu menu-right">
-						<li class="menu-item-branch">
-							<span class="label">People</span>
-							<ul class="submenu">
-								<li><a href="team.html">Team</a></li>
-								<li><a href="attributions.html">Attributions</a></li>
-								<li><a href="sponsoring.html">Sponsoring</a></li>
-							</ul>
-						</li>
-						<li class="menu-item-branch">
-							<span class="label">Human Practices</span>
-							<ul class="submenu">
-								<li><a href="human-practices.html">Human Practices</a></li>
-								<li><a href="public-engagement.html">Public Engagement</a></li>
-								<li><a href="collaborations.html">Collaborations</a></li>
-							</ul>
-						</li>
-					</ul>
-				</nav>
-			
-        </header>
-        <div id="reef-section">
-            <div class="scene-paralax scene" id="reef" data-scene-width="1920" data-scene-height="800">
-                    
-                <div class="layer-paralax layer layer-split-paralax" id="reef-bg"
-                    data-layer-z="50">
-                    <div class="split-left"></div>
-                    <div class="split-right"></div>
-                </div>
+            <a class="logo" href="index.html"><img src="logo.svg"></a>
+            <nav class="navigation" data-breakpoint="768">
+                <ul class="menu menu-left">
+                    <li class="menu-item-branch">
+                        <span class="label">Project</span>
+                        <ul class="submenu">
+                            <li><a href="description.html">Description</a></li>
+                            <li><a href="results.html">Results</a></li>
+                            <li><a href="design.html">Design</a></li>
+                            <li><a href="modeling.html">Modeling</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-branch">
+                        <span class="label">Laboratory</span>
+                        <ul class="submenu">
+                            <li href="interlab.html"><a>InterLab</a></li>
+                            <li href="experiments.html"><a>Experiments</a></li>
+                            <li href="notebook.html"><a>Notebook</a></li>
+                            <li href="safety.html"><a>Safety</a></li>
+                        </ul>
+                    </li>
+                </ul>
                 
-                <div class="layer-paralax layer layer-split-paralax" id="reef-corals-third" 
-                    data-layer-z="10"
-                    data-animate-shown="slide-in-up 0.2 1">
-                    <div class="split-left"></div>
-                    <div class="split-right"></div>
-                </div>
+                <ul class="menu menu-right">
+                    <li class="menu-item-branch">
+                        <span class="label">People</span>
+                        <ul class="submenu">
+                            <li><a href="team.html">Team</a></li>
+                            <li><a href="attributions.html">Attributions</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-branch">
+                        <span class="label">Human Practices</span>
+                        <ul class="submenu">
+                            <li><a href="human-practices.html">Human Practices</a></li>
+                            <li><a href="public-engagement.html">Public Engagement</a></li>
+                            <li><a href="collaborations.html">Collaborations</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-                <div class="layer-paralax layer layer-split-paralax" id="reef-corals-second" 
-                    data-layer-z="20"
-                    data-animate-shown="slide-in-up 0.2 1">
-                    <div class="split-left"></div>
-                    <div class="split-right"></div>
-                </div>
+        <section id="reef-section">
+            <div class="content">
+                <div id="reef" class="scene-paralax scene" data-scene-width="1920" data-scene-height="800">
+                        
+                    <div class="layer-paralax layer layer-split-paralax" id="reef-bg"
+                        data-layer-z="50">
+                        <div class="split-left"></div>
+                        <div class="split-right"></div>
+                    </div>
+                    
+                    <div class="layer-paralax layer layer-split-paralax" id="reef-corals-third" 
+                        data-layer-z="10"
+                        data-animate-shown="slide-in-up 0.1 0.5">
+                        <div class="split-left"></div>
+                        <div class="split-right"></div>
+                    </div>
 
-                <!-- <div class="layer-paralax layer layer-split-paralax" id="reef-fish" 
-                    data-layer-z="15">
+                    <div class="layer-paralax layer layer-split-paralax" id="reef-corals-second" 
+                        data-layer-z="20"
+                        data-animate-shown="slide-in-up 0.2 0.5">
+                        <div class="split-left"></div>
+                        <div class="split-right"></div>
+                    </div>
 
-                    <div class="split-left">
-                        <div class="fish-x">
-                            <div class="fish-y">
-                                <div class="fish-body">
-                                    <img src="fish.png" class="animate">
-                                </div>
-                            </div>
+                    <div class="layer-paralax layer layer-split-paralax" id="reef-corals-first" 
+                        data-layer-z="30"
+                        data-animate-shown="slide-in-up 0.3 0.5">
+                        <div class="split-left">
                         </div>
+                        <div class="split-right"></div>
                     </div>
-                    <div class="split-right">
-                        <div class="fish-x">
-                            <div class="fish-y">
-                                <div class="fish-body">
-                                    <img src="fish.png" class="animate">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
 
-                <div class="layer-paralax layer layer-split-paralax" id="reef-corals-first" 
-                    data-layer-z="30"
-                    data-animate-shown="slide-in-up 0.4 1">
-                    <div class="split-left">
+                    <div class="layer-paralax layer layer-split-paralax" id="reef-corals-zero" 
+                        data-layer-z="0">
+                        <div class="split-left">
+                        </div>
+                        <div class="split-right"></div>
                     </div>
-                    <div class="split-right"></div>
                 </div>
 
-                <!-- <div class="layer" id="reef-text"
-                    data-layer-z="0">
-                    <h1>The end is near</h1>
-                    <div>Every day we stray further from god, using environment-hostile sunscreen. It bleaches corals and change gender of fish.</div>
-                </div> -->
-
-                <div class="layer-paralax layer layer-split-paralax" id="reef-corals-zero" 
-                    data-layer-z="0"
-                    data-animate-shown="slide-in-up 0.4 1">
-                    <div class="split-left">
+                <div id="reef-card">
+                    <div style="font-size: 25px">
+                        Every year around <span class="text-glow-red" style="font-size: 40px; font-weight: 100;">14,000</span> tons of sunscreen is washed into the oceans and seas.
                     </div>
-                    <div class="split-right"></div>
+                    <div>
+                        A great number of commercially produced sunscreens contain chemical compounds with a broad-spectrum ultraviolet coverage, such as oxybenzone and octinoxate, which are extremely toxic to the environment. Sunscreen washed into the ocean results in a dramatic increase of the toxicity level, causing a variety of pathologies to corals, including bleaching. 
+                    </div> 
                 </div>
             </div>
+        </section>
 
-            <div id="reef-card" class="card">
-                Nowadays a great number of commercially produced sunscreens contain chemical compounds with a broad-spectrum ultraviolet coverage, such as oxybenzone and octinoxate, which are extremely toxic to the environment. Every year around 14,000 tons of sunscreen is washed into the oceans and seas, resulting in a dramatic increase of the toxicity level, causing a variety of pathologies to corals. 
-            </div>
-        </div>
-        <div id="molecule" class="map" data-map-width="1920" data-map-height="1023" data-map-pin-width="126"  data-map-pin-height="126">
-            <div class="pin" data-pin-x="237" data-pin-y="149">
-                <div class="icon" style="background-image:url(member-1.png)" ></div>
+        <section id="process">
+            <div class="content">
+                <img src="process.png">
                 <div class="card">
-                    <div class="picture">
-                        <img src="member-1.png">
+                    <div  style="font-size: 25px">
+                        To prevent this we can use natural UV protection compounds, such as <br/> <span class="text-glow-blue" style="font-size: 40px; font-weight: 100">mycosporine-like amino&nbsp;acids</span>. 
                     </div>
-                    <div class="details">
-                        Fgynjy PTvtkm
-                    </div>
+                    Our team is trying to produce MAA-s in yeast, using the genes from two different cyanobacterial species. 
+                    We are expecting to obtain shinorine and porphyra-334 (MAAs). <br/>
+                    They work not only as sunscreen but also are able to protect skin from photoaging, have the anti-inflammatory effect and antioxidant activity and even could be considered as anti-cancer agents.
                 </div>
             </div>
-            <div class="background"></div>
         </div>
+
         
+        <section class="banner">
+            <div class="title text-glow-red">OUR TEAM</div>
+        </section>
+
+        <div id="molecule"> 
+            <div class="content">
+                <div class="map" data-map-width="1920" data-map-height="1023" data-map-pin-width="126"  data-map-pin-height="126">
+                    <div class="pin" data-pin-x="237" data-pin-y="149">
+                        <div class="icon" style="background-image:url(alexandra.png)" ></div>
+                        <div class="card">
+                            <div class="picture">
+                                <img src="alexandra.png">
+                            </div>
+                            <div class="details">
+                                <div class="name">Aleksandra Panfilova</div>
+                                <div class="country">Estonia</div>
+                                <div class="role">Somehow help the advisor with directing some parts of lab work, leads the modelling team</div>
+                                <div class="superpower">Sasha can touch the tip of her nose with her tongue</div>
+                                <div class="element">Krypton (Kr): inert</div>
+                                <div class="periodic">
+                                    <div class="number">36</div>
+                                    <div class="mass">83.798</div>
+                                    <div class="short">Kr</div>
+                                    <div class="full">Krypton</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="pin" data-pin-x="386" data-pin-y="329">
+                        <div class="icon" style="background-image:url(alissa.png)" ></div>
+                        <div class="card"></div>
+                    </div>
+
+
+                    <div class="pin" data-pin-x="723" data-pin-y="539">
+                            <div class="icon" style="background-image:url(anastasia.png)" ></div>
+                            <div class="card"></div>
+                        </div>
+
+                    <div class="pin" data-pin-x="1045" data-pin-y="900">
+                        <div class="icon" style="background-image:url(anton.png)" ></div>
+                        <div class="card"></div>
+                    </div>
+
+                    
+                    <div class="pin" data-pin-x="814" data-pin-y="88">
+                        <div class="icon" style="background-image:url(artemi.png)" ></div>
+                        <div class="card"></div>
+                    </div>
+
+                    <div class="pin" data-pin-x="398" data-pin-y="552">
+                        <div class="icon" style="background-image:url(arthur.png)" ></div>
+                        <div class="card"></div>
+                    </div>
+
+                    
+                    <div class="pin" data-pin-x="237" data-pin-y="835">
+                        <div class="icon" style="background-image:url(dainis.png)" ></div>
+                        <div class="card"></div>
+                    </div>
+
+                    <div class="pin" data-pin-x="893" data-pin-y="803">
+                        <div class="icon" style="background-image:url(frida.png)" ></div>
+                        <div class="card"></div>
+                    </div>
+
+                    <div class="pin" data-pin-x="985" data-pin-y="88">
+                        <div class="icon" style="background-image:url(ilona.png)" ></div>
+                        <div class="card"></div>
+                    </div>
+
+                    <div class="pin" data-pin-x="893" data-pin-y="239">
+                        <div class="icon" style="background-image:url(irina.png)" ></div>
+                        <div class="card"></div>
+                    </div>
+
+                    <div class="pin" data-pin-x="719" data-pin-y="329">
+                        <div class="icon" style="background-image:url(jinnie.png)" ></div>
+                        <div class="card"></div>
+                    </div>
+
+                    <div class="pin" data-pin-x="595" data-pin-y="88">
+                        <div class="icon" style="background-image:url(kaur.png)" ></div>
+                        <div class="card"></div>
+                    </div>
+
+                    <div class="pin" data-pin-x="0" data-pin-y="566">
+                        <div class="icon" style="background-image:url(luka.png)" ></div>
+                        <div class="card"></div>
+                    </div>
+
+                    <div class="pin" data-pin-x="557" data-pin-y="238">
+                        <div class="icon" style="background-image:url(nadya.png)" ></div>
+                        <div class="card"></div>
+                    </div>
+
+                    <div class="pin" data-pin-x="896" data-pin-y="629">
+                        <div class="icon" style="background-image:url(nargiz.png)" ></div>
+                        <div class="card"></div>
+                    </div>
+
+                    <div class="pin" data-pin-x="566" data-pin-y="630">
+                        <div class="icon" style="background-image:url(tikuna.png)" ></div>
+                        <div class="card"></div>
+                    </div>
+
+                    <div class="pin" data-pin-x="1392" data-pin-y="539">
+                        <div class="icon" style="background-image:url(turan.png)" ></div>
+                        <div class="card"></div>
+                    </div>
+
+                    <div class="pin" data-pin-x="1217" data-pin-y="630">
+                        <div class="icon" style="background-image:url(veronika.png)" ></div>
+                        <div class="card"></div>
+                    </div>
+
+                    <div class="pin" data-pin-x="1045" data-pin-y="539">
+                        <div class="icon" style="background-image:url(vlad.png)" ></div>
+                        <div class="card"></div>
+                    </div>
+    
+    
+                    <div class="background"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer id="footer">
+            <div class="navigation"></div>
+            <h3>SPONSORS</h3>
+            <ul class="logos">
+                <li><img src="logo-ut.svg"></li>
+                <li><img src="logo-tuit.svg"></li>
+                <li><img src="logo-lanlab.svg"></li>
+                <li><img src="logo-ecsb.svg"></li>
+                <li><img src="logo-idt.svg"></li>
+                <li><img src="logo-neb.svg"></li>
+            </ul>
+        </footer>
 
 		<script type="text/javascript" src="main.js"></script>
 		<!-- <script type="text/javascript" src="animate.js"></script> -->
